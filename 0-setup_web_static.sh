@@ -22,9 +22,11 @@ printf %s "server {
         alias /data/web_static/current;
         index index.html index.htm;
     }
+
     location /redirect_me {
         return 301 http://cuberule.com/;
     }
+
     error_page 404 /404.html;
     location /404 {
       root /var/www/html;
@@ -33,4 +35,3 @@ printf %s "server {
 }" > /etc/nginx/sites-available/default
 
 service nginx restart
-
